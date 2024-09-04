@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+    
+{% block content %}
+
+    <div class="container-fluid " >
+        <div class="row">
+            <h2 >{{blog_name}}</h2>
+        </div>
+        <div class="row m-3">
+
+            {% if posts %}
+                {% for post in posts %}
+                    <div class="col-4 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                               <div class="row">
+                                    <img src="{{post.img_url}}" class="img-fluid" alt="..." style="height:300px; width:300px; object-fit:cover;">
+                                </div>
+                                <div class="col-md-8">
+                                    <h5 class="card-title">{{post.name}}</h5>
+                                    <p class="card-text">{{post.description | truncatechars:30}}</p>
+                                    <div class="d-flex justify-content-between">
+                                        <a href="{% url 'blog:detail' post_id=post.id %}">Read More</a>
+                                        <a class="text-decoration-none text-dark fw-bold" href="#">{{post.category}}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor%}
+            {% else %}  
+                <p>No Food Available</p>  
+            {% endif %}
+        </div>
+        
+    </div>
+
+{% endblock  %}

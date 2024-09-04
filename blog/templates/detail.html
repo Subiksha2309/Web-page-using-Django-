@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid" style="padding: 15px;">
+    <div class="row" style="margin: 0;">
+        <div class="col-lg-8" style=" padding: 15px;">
+            <h1 class="mb-4">{{ post.name }}</h1>
+            <img src="{{ post.img_url }}" class="img-fluid mb-4" alt="Blog Image">
+            <div class="mb-3" style="margin-bottom: 1rem;">
+                <p class="font-weight-bold" style="font-weight: bold;">Description:</p>
+                <p>{{ post.description }}</p>
+            </div>
+            <div class="mb-3" style="margin-bottom: 1rem;">
+                <p class="font-weight-bold" style="font-weight: bold;">Ingredients:</p>
+                <p>{{ post.ingredients }}</p>
+            </div>
+            <div class="mb-3" style="margin-bottom: 1rem;">
+                <p class="font-weight-bold" style="font-weight: bold;">Method:</p>
+                <p>{{ post.method }}</p>
+            </div>
+            <div class="mb-3" style="margin-bottom: 1rem;">
+                <p class="font-weight-bold" style="font-weight: bold;">Category:</p>
+                <p>{{ post.category }}</p>
+            </div>  
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
